@@ -1,0 +1,34 @@
+<div class="center">
+  <h1>Results <%=@time%></h1>
+
+  <% if @salaries %>
+      <table class="results-table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Whole salary ($)</th>
+          <th>Base salary ($)</th>
+          <th>Evening salary ($)</th>
+          <th>Overtime salary ($)</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @salaries.each do |name,salary| %>
+            <tr>
+              <td><%= name %></td>
+              <% salary.each do |part| %>
+                  <td><%=part%></td>
+              <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <br>
+
+  <%else %>
+      you posted nothing, please
+  <%end%>
+</div>
+<%= link_to "Calculate another file", root_path %>
