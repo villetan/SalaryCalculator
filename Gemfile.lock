@@ -85,6 +85,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -182,6 +183,7 @@ DEPENDENCIES
   foundation-rails (~> 5.3)
   jbuilder (~> 2.0)
   jquery-rails
+  pg
   pry
   rails (= 4.2.5)
   rails_layout
