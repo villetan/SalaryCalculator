@@ -18,12 +18,17 @@
   text-align: center;
 }
 
+.center h1{
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
 .file_field {
   display: inline-block;
   width: 50% !important;
   background: linear-gradient(#C4EAFA, #fff);
   text-align: center;
-  font-family:customfont;
+  color: black !important;
 }
 
 .top-bar{
@@ -45,7 +50,7 @@ main{
 }
 
 button.radius, button.submit, .button.radius, .submit{
-  background: -webkit-radial-gradient(#fff, #C4EAFA, #05ACF0);
-  color: black;
+  background-color: #05ACF0;
+  color: white;
 }
 

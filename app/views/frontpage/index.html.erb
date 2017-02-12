@@ -1,10 +1,9 @@
 <div class="center">
   <h1>Welcome to a salary calculator!</h1>
-
+  Please upload the .csv file to count the salaries of the employees.
   <%= form_tag '/upload', multipart: true do %>
-      <label for="file">Please upload the .csv file to count the salaries of the employees</label>
       <br>
-      <%= file_field_tag "file", class: "file_field" %>
+      <%= file_field_tag "file", class: "file_field button radius tiny" %>
       <br>
       <%= button_tag "Calculate", class: "button radius tiny" , type:"submit"%>
   <% end %>
