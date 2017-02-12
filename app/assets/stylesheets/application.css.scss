@@ -43,3 +43,9 @@ main{
   margin-left: auto;
   margin-right: auto;
 }
+
+button.radius, button.submit, .button.radius, .submit{
+  background: -webkit-radial-gradient(#fff, #C4EAFA, #05ACF0);
+  color: black;
+}
+
