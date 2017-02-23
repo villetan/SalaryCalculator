@@ -76,9 +76,9 @@ module FileHelper
     s_hour, s_minute = shift[3].split(":").map{|x| x.to_i}
     e_hour, e_minute = shift[4].split(":").map{|x| x.to_i}
     start = Time.new(year, month, day, s_hour, s_minute)
-    if e_hour <= s_hour or (e_hour == s_hour and e_minute >= s_minute)
+    if e_hour < s_hour
       stopped = start.advance(days: 1)
-      stopped.change(:hour => e_hour, :min => e_minute)
+      stopped = stopped.change(:hour => e_hour, :min => e_minute)
     else
       stopped = start.change(:hour => e_hour, :min => e_minute)
     end

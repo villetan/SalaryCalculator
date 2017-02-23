@@ -11,7 +11,7 @@ describe FileHelper, type: :helper do
       expect(send(:overtime_salary, 5)).to eq (0)
     end
 
-    it " -evening_saöary work correctly" do
+    it " -evening_salary work correctly" do
       start1 = Time.new(2014, 10, 31, 18)
       end1 = Time.new(2014, 11, 1, 6)
       expect(send(:evening_salary, start1, end1)).to eq(13.80)
@@ -30,6 +30,13 @@ describe FileHelper, type: :helper do
       start1 = Time.new(2014, 10, 31, 5)
       end1 = Time.new(2014, 10, 31, 19)
       expect(send(:evening_salary, start1, end1)).to eq((2.30))
+    end
+
+    it "reads data and counts overnight salary correctly" do
+      file = File.new("spec/fixtures/test.csv")
+      simulated_upload = ActionDispatch::Http::UploadedFile.new(tempfile: file)
+      results = send(:handle_file, simulated_upload)
+      expect(results[1]["Scott Scala"]).to include(39.2)
     end
   end
 end
